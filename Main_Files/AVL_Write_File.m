@@ -56,7 +56,8 @@ Wing.Area=(Wing_Span)*((Wing.Root.Chord+Wing.Tip.Chord))/2;  % Wing_Span = 30;
 Winglet.Area=2*Winglet_Span*((Winglet.Root.Chord+Winglet.Tip.Chord))/2; % Multiplied by 2 to convert Winglet Semi-Span to Winglet Span
 Sref= Winglet.Area+Wing.Area;
 Bref= Wing_Span+(2*Winglet_Span);
-Cref=Sref/Bref;
+Cref= (2/3)*(Wing.Root.Chord-Wing.Tip.Chord*(Wing.Root.Chord*Wing.Tip.Chord)/(Wing.Root.Chord+Wing.Tip.Chord)); % MAC of the wing
+% Cref=Sref/Bref; % As per AVL documentation
 
 %% Writing AVL File
 filename = '.\AVL_File';
